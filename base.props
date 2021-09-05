@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <RootDir>$(SolutionDir)</RootDir>
+    <ObjDir>$(RootDir)obj\$(Configuration)\</ObjDir>
+    <BinDir>$(RootDir)bin\$(Configuration)\</BinDir>
+    <IntDir>$(ObjDir)$(ProjectName).obj\</IntDir>
+    <ThirdPartyDir>$(ProjectDir)..\third_party\</ThirdPartyDir>
+    <SourceDir>$(ProjectDir)..\src\</SourceDir>
+    <ModuleDir>$(RootDir)..\</ModuleDir>
+    <QtIntDir>$(ObjDir)$(ProjectName).qt\</QtIntDir>
+    <UiDir>$(BinDir)</UiDir>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutDir>$(BinDir)</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(QtIntDir)GeneratedFiles;.;$(QTDIR)\include;$(QtIntDir)GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtQml;$(QTDIR)\include\QtQuick;$(QTDIR)\include\QtQuickWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(BinDir);$(UiDir);$(QTDIR)\lib</AdditionalLibraryDirectories>
+    </Link>
+    <QtMoc>
+      <OutputFile>$(QtIntDir)GeneratedFiles\$(Configuration)\moc_%(Filename).cpp</OutputFile>
+    </QtMoc>
+    <QtRcc>
+      <OutputFile>$(QtIntDir)GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+    </QtRcc>
+    <QtUic>
+      <OutputFile>$(QtIntDir)GeneratedFiles\ui_%(Filename).h</OutputFile>
+    </QtUic>
+    <Bscmake>
+      <OutputFile>$(objDir)$(TargetName).bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="RootDir">
+      <Value>$(RootDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ObjDir">
+      <Value>$(ObjDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="BinDir">
+      <Value>$(BinDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="IntDir">
+      <Value>$(IntDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ThirdPartyDir">
+      <Value>$(ThirdPartyDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="SourceDir">
+      <Value>$(SourceDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ModuleDir">
+      <Value>$(ModuleDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="QtIntDir">
+      <Value>$(QtIntDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="UiDir">
+      <Value>$(UiDir)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
